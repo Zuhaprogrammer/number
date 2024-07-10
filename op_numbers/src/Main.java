@@ -4,11 +4,14 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Scanner scanInt = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter number: ");
+        int num = scanner.nextInt();
+        even_numbers(num);
         System.out.print("enter number a: ");
-        int a = scanInt.nextInt();
+        int a = scanner.nextInt();
         System.out.print("enter number b: ");
-        int b = scanInt.nextInt();
+        int b = scanner.nextInt();
         System.out.println("Ekub (a and b) --> "  + ekub(a,b));
         ekuk(a, b);
     }
@@ -24,6 +27,7 @@ public class Main {
         }
         return ekub;
     }
+
     public static void ekuk(int a, int b){
         int ekuki = a;
         while(true){
@@ -32,6 +36,14 @@ public class Main {
                 return;
             }
             ekuki++;
+        }
+    }
+
+    static void even_numbers(int n) {
+        if (n % 2 == 0) {
+            System.out.println("Even number");
+        } else {
+            System.out.println("Odd number");
         }
     }
 }
