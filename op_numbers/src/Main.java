@@ -1,34 +1,5 @@
 import java.util.Scanner;
 
-<<<<<<< HEAD
-public class Main {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("enter number: ");
-        int n = scanner.nextInt();
-        printPerfectNumbers(n);
-    }
-
-    public static void printPerfectNumbers(int n) {
-        for (int num = 1; num <= n; num++) {
-            if (isPerfect(num)) {
-                System.out.println(num);
-            }
-        }
-    }
-
-    public static boolean isPerfect(int num) {
-        int summa = 0;
-        for (int i = 1; i < num; i++) {
-            if (num % i == 0) {
-                summa += i;
-            }
-        }
-        return summa == num;
-=======
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -41,6 +12,10 @@ public class Main {
         int b = scanner.nextInt();
         System.out.println("Ekub (a and b) --> "  + ekub(a,b));
         ekuk(a, b);
+        System.out.print("Enter n: ");
+        int n = scanner.nextInt();
+        primeNumbers(n);
+        printPerfectNumbers(n);
     }
 
     private static int ekub(int a,int b){
@@ -72,6 +47,41 @@ public class Main {
         } else {
             System.out.println("Odd number");
         }
->>>>>>> 0bddcf41d1ff7708a36f1dcc47ba1a041c2e3c86
+    }
+
+    private static void primeNumbers(int n) {
+        int count;
+        for (int i = 1; i < n; i++) {
+            count = 0;
+            for (int j = 1; j <= i; j++) {
+                if (i % j == 0) {
+                    count++;
+                }
+            }
+            if (i == 1) {
+                System.out.print(i + "\t");
+            }
+            if (count == 2) {
+                System.out.print(i + "\t");
+            }
+        }
+    }
+
+    public static void printPerfectNumbers(int n) {
+        for (int num = 1; num <= n; num++) {
+            if (isPerfect(num)) {
+                System.out.println(num);
+            }
+        }
+    }
+
+    public static boolean isPerfect(int num) {
+        int summa = 0;
+        for (int i = 1; i < num; i++) {
+            if (num % i == 0) {
+                summa += i;
+            }
+        }
+        return summa == num;
     }
 }
