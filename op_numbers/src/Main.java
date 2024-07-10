@@ -10,6 +10,7 @@ public class Main {
         System.out.print("enter number b: ");
         int b = scanInt.nextInt();
         System.out.println("Ekub (a and b) --> "  + ekub(a,b));
+        ekuk(a, b);
     }
 
     private static int ekub(int a,int b){
@@ -22,5 +23,15 @@ public class Main {
             }
         }
         return ekub;
+    }
+    public static void ekuk(int a, int b){
+        int ekuki = a;
+        while(true){
+            if (ekuki%a == 0 && ekuki%b == 0){
+                System.out.println("Ekuk " + a + " and " + b + " is: " + ekuki);
+                return;
+            }
+            ekuki++;
+        }
     }
 }
