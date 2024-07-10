@@ -8,6 +8,23 @@ public class Main {
         System.out.println("Enter number: ");
         int num = scanner.nextInt();
         even_numbers(num);
+        System.out.print("enter number a: ");
+        int a = scanner.nextInt();
+        System.out.print("enter number b: ");
+        int b = scanner.nextInt();
+        System.out.println("Ekub (a and b) --> " + ekub(a, b));
+    }
+
+    private static int ekub(int a, int b) {
+        int ekub = a + 1;
+        boolean stop = true;
+        while (stop) {
+            ekub--;
+            if (a % ekub == 0 && b % ekub == 0) {
+                stop = false;
+            }
+        }
+        return ekub;
     }
 
     static void even_numbers(int n) {
